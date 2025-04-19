@@ -1,0 +1,6 @@
+pyvista
+numpy
+pandas
+tqdm
+matplotlib
+jupyter

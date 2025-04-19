@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PA-EndoMesh
 
 **Mesh-based Extraction of Pulmonary Artery Geometry at End-Diastole from UK Biobank CINE MRI**
@@ -56,3 +57,6 @@ While prior studies (e.g., Bello et al. 2019, Meng et al. 2021) have used deep l
 
 ---
 
+=======
+# PulmonaryArtery
+>>>>>>> d866a0fdecb1539f6722f50a667ad41fe60b3dfb
