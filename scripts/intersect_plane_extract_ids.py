@@ -201,7 +201,7 @@
 
 # # === Shutdown message ===
 # def on_exit():
-#     print("\n✅ Visualization closed successfully. Goodbye!")
+#     print("\n Visualization closed successfully. Goodbye!")
 # atexit.register(on_exit)
 
 # # === Suppress warnings ===
@@ -316,7 +316,7 @@
 
 # # === UI text ===
 # plotter.add_text(
-#     "🖐 Left-click to place slicing plane\n💨 Drag to adjust plane\n⏰ Press SPACE to finalize",
+#     " Left-click to place slicing plane\n Drag to adjust plane\n Press SPACE to finalize",
 #     position="upper_left", font_size=12, color="#00ccff")
 
 # # === Bind events ===
@@ -340,20 +340,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import pyvista as pv
 import numpy as np
 import json
@@ -365,7 +351,7 @@ import warnings
 
 # === Shutdown message ===
 def on_exit():
-    print("\n✅ Visualization closed successfully. Goodbye!")
+    print("\n Visualization closed successfully. Goodbye!")
 atexit.register(on_exit)
 
 # === Suppress warnings ===
@@ -387,7 +373,7 @@ def intersect_mesh_with_plane(mesh, origin, normal):
     sliced = mesh.slice(normal=normal, origin=origin)
 
     if sliced.n_points == 0:
-        print("⚠️ No intersection points found. Check the plane position and orientation.")
+        print(" No intersection points found. Check the plane position and orientation.")
 
     intersected_ids = []
     for i, p in enumerate(sliced.points):
@@ -395,7 +381,7 @@ def intersect_mesh_with_plane(mesh, origin, normal):
             closest_id = mesh.find_closest_point(p)
             intersected_ids.append(closest_id)
         except Exception as e:
-            print(f"❌ Error finding closest point for {p} at index {i}: {e}")
+            print(f" Error finding closest point for {p} at index {i}: {e}")
 
     return sliced.points, intersected_ids
 
@@ -420,7 +406,7 @@ print("Mesh center:", mesh.center)
 
 # === Plotter setup ===
 plotter = pv.Plotter()
-plotter.add_mesh(mesh, color="lightgray", opacity=0.3, smooth_shading=True)
+plotter.add_mesh(mesh, color="lightgray", opacity=0.3, smooth_shading=True, lighting=True)
 chosen_plane = {"origin": None, "normal": [0, 0, 1]}
 
 # === Picking ===
@@ -488,7 +474,7 @@ def finalize_selection():
 
 # === UI text ===
 plotter.add_text(
-    "🖐 Left-click to place slicing plane\n💨 Drag to adjust plane\n⏰ Press SPACE to finalize",
+    " Left-click to place slicing plane\n Drag to adjust plane\n Press SPACE to finalize",
     position="upper_left", font_size=12, color="#00ccff")
 
 # === Bind events ===
@@ -505,3 +491,11 @@ def safe_close_plotter():
     except:
         pass
 atexit.register(safe_close_plotter)
+
+
+
+
+
+
+
+
